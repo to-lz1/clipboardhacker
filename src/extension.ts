@@ -18,15 +18,13 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(cut, copy);
 }
 
-function hackClipboard() {
+async function hackClipboard() {
 	const config = vscode.workspace.getConfiguration('cliphack');
 	const dictionary = config.get<Array<any>>("dictionary") || [];
 
-	vscode.env.clipboard.readText().then( str => {
-		let s = str;
-		dictionary.forEach(elem => {
-			s = s.replace(new RegExp(elem.from, 'g'), elem.to);
-		});
-		vscode.env.clipboard.writeText(s);
+	let text = await vscode.env.clipboard.readText();
+	dictionary.forEach(elem => {
+		text = text.replace(new RegExp(elem.from, 'g'), elem.to);
 	});
+	vscode.env.clipboard.writeText(text);
 }
