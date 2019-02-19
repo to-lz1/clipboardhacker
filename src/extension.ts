@@ -1,20 +1,17 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   console.log("clipboard-hacker-extension is successfully activated.");
 
 	const cut = vscode.commands.registerCommand('cliphack.cut-with-replace', () => {
 		vscode.commands.executeCommand(`editor.action.clipboardCutAction`).then(() => {
-			hackClipboard();
+			// fixme: executeCommandをawaitするだけではvscode.env.clipboardから読み取れることが保証されないため、あえて待つ
+			setTimeout(hackClipboard, 75);
 		});
 	});
 	const copy = vscode.commands.registerCommand('cliphack.copy-with-replace', () => {
 		vscode.commands.executeCommand(`editor.action.clipboardCopyAction`).then(() => {
-			hackClipboard();
+			setTimeout(hackClipboard, 75);
 		});
 	});
 
@@ -22,7 +19,6 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function hackClipboard() {
-
 	const config = vscode.workspace.getConfiguration('cliphack');
 	const dictionary = config.get<Array<any>>("dictionary") || [];
 
