@@ -16,46 +16,47 @@
 		"*"
 	],
 	"repository": {
-    "type": "git",
-    "url": "git@github.com:to-lz1/clipboardhacker.git"
-  },
+		"type": "git",
+		"url": "git@github.com:to-lz1/clipboardhacker.git"
+	},
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "cliphack.cut-with-replace",
 				"title": "Cut with Replace"
-				},
+			},
 			{
 				"command": "cliphack.copy-with-replace",
 				"title": "Copy with Replace"
-			}],
+			}
+		],
 		"configuration": {
 			"type": "object",
 			"title": "Clipboard Hack Configuration",
 			"properties": {
 				"cliphack.dictionary": {
-						"type": "array",
-						"items": {
-							"type": "object",
-							"title": "inner objects",
-							"properties": {
-								"from": {
-									"type": "string",
-									"description": "replace target regexp"
-								},
-								"to": {
-									"type": "string",
-									"description": "replaced string will be this string"
-								}
+					"type": "array",
+					"items": {
+						"type": "object",
+						"title": "inner objects",
+						"properties": {
+							"from": {
+								"type": "string",
+								"description": "replace target regexp"
+							},
+							"to": {
+								"type": "string",
+								"description": "replaced string will be this string"
 							}
-						},
-						"default": [],
-						"description": "cliphack replace dictionary"
+						}
+					},
+					"default": [],
+					"description": "cliphack replace dictionary"
 				}
 			}
 		}
-},
+	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
 		"compile": "tsc -p ./",
@@ -64,10 +65,10 @@
 		"test": "yarn run compile && node ./node_modules/vscode/bin/test"
 	},
 	"devDependencies": {
-		"typescript": "^3.3.1",
-		"vscode": "^1.1.28",
-		"tslint": "^5.12.1",
-		"@types/node": "^10.12.21",
-		"@types/mocha": "^2.2.42"
+		"@types/mocha": "5.2.7",
+		"@types/node": "12.7.1",
+		"tslint": "5.18.0",
+		"typescript": "3.5.3",
+		"vscode": "1.1.36"
 	}
 }

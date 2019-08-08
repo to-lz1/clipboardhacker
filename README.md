@@ -12,7 +12,7 @@ example:
 ```
   "cliphack.dictionary": [
     { "from": "foo" "to": "bar" },
-    { "from": "buz\\." "to": "bar" }
+    { "from": "buz\\." "to": "bar." }
   ]
 ```
 
