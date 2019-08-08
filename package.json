@@ -4,6 +4,7 @@
 	"description": "",
 	"version": "0.0.2",
 	"engines": {
+		"node": "^12.4.0",
 		"vscode": "^1.30.0"
 	},
 	"publisher": "to-lz1",
@@ -14,6 +15,10 @@
 	"activationEvents": [
 		"*"
 	],
+	"repository": {
+    "type": "git",
+    "url": "git@github.com:to-lz1/clipboardhacker.git"
+  },
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [

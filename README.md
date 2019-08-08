@@ -1,12 +1,6 @@
 # clipboardhacker README
 
-## Features
-
-- TBA
-
-## Requirements
-
-- TBA
+VisualStudioCode extension, that provides some functions related to clipboard.
 
 ## Extension Settings
 
@@ -22,12 +16,10 @@ example:
   ]
 ```
 
-## Known Issues
+## packaging
 
-- TBA
+`vsce` is required for packaging. This plugin is not published on Market Place so far.
 
-## Release Notes
-
-### 0.0.1
-
-- initial release
+```
+vsce package
+```
