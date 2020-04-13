@@ -11,14 +11,18 @@ This extension contributes the following settings:
 example:
 ```
   "cliphack.dictionary": [
-    { "from": "foo" "to": "bar" },
-    { "from": "buz\\." "to": "bar." }
+    { "from": "foo", "to": "bar" },
+    { "from": "buz\\.", "to": "bar." }
   ]
 ```
 
 ## packaging
 
 `vsce` is required for packaging. This plugin is not published on Market Place so far.
+
+```
+yarn install
+```
 
 ```
 vsce package
