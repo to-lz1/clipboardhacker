@@ -2,9 +2,9 @@
 	"name": "clipboardhacker",
 	"displayName": "ClipboardHacker",
 	"description": "",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
-		"node": "^12.4.0",
+		"node": "^13.1.0",
 		"vscode": "^1.30.0"
 	},
 	"publisher": "to-lz1",
