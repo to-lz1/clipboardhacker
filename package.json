@@ -4,8 +4,8 @@
 	"description": "",
 	"version": "0.0.3",
 	"engines": {
-		"node": "^13.1.0",
-		"vscode": "^1.30.0"
+		"node": "^20.10.0",
+		"vscode": "^1.84.0"
 	},
 	"publisher": "to-lz1",
 	"license": "MIT",
@@ -61,14 +61,15 @@
 		"vscode:prepublish": "yarn run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
-		"postinstall": "node ./node_modules/vscode/bin/install",
 		"test": "yarn run compile && node ./node_modules/vscode/bin/test"
 	},
 	"devDependencies": {
 		"@types/mocha": "5.2.7",
 		"@types/node": "12.7.1",
+		"@types/vscode": "^1.84.2",
+		"@vscode/test-cli": "^0.0.4",
+		"@vscode/test-electron": "^2.3.8",
 		"tslint": "5.18.0",
-		"typescript": "3.5.3",
-		"vscode": "1.1.36"
+		"typescript": "3.5.3"
 	}
 }
